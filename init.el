@@ -1,7 +1,4 @@
-(when
-    (load
-     (expand-file-name "~/.emacs.d/package.el"))
-  (package-initialize))
+;; @sb working with v24+ so assuming package.el is built-in
 
 (defun load-conf (filename)
   "load the file in ~/.emacs.d/ unless it has already been loaded"
@@ -23,7 +20,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 
                                         ; basic
-;;(load-conf "packages")
+(load-conf "packages")
 (load-conf "basic-customization")
 (load-conf "customizations")
 ;;(load-conf "browser")
@@ -35,7 +32,8 @@
 ;;(load-conf "ido")
 (load-conf "dired-details")
 (load-conf "uniquify")
-(load-conf "theme")
+;; @sb using really basic theming, excluding for now
+;;(load-conf "theme")
 
 ;; C-x r m / l / b
 (load-conf "bookmarks")
@@ -88,13 +86,13 @@
 ;;(load-conf "puppet-mode")
 ;;(load-conf "coffee-mode")
 (load-conf "css-mode")
-;;(load-conf "nxhtml")
+(load-conf "nxhtml")
 ;;(load-conf "scss-mode")
 ;;(load-conf "sass-mode")
 (load-conf "js2-mode")
 (load-conf "js2-refactor")
-;;(load-conf "markdown-mode")
-;;(load-conf "yaml-mode")
+(load-conf "markdown-mode")
+(load-conf "yaml-mode")
 
 (global-set-key "\C-w" 'clipboard-kill-region)
 

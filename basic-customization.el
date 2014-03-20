@@ -1,6 +1,13 @@
 ;; use a separate customization file
 (setq custom-file "~/.emacs.d/customizations.el")
 
+;; @sb my own minor customisations to this masterpiece :)
+(setq default-buffer-file-coding-system 'utf-8-unix)
+(setq tab-width 4)
+(setq c-basic-offset 4)
+(setq c-brace-offset 0)
+(setq tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 120)))
+
 ;; use bar cursor as default
 (push '(cursor-type . bar) default-frame-alist)
 
@@ -8,13 +15,11 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 
-;; Remove toolbar, scrollbar and menu bar
+;; Remove toolbar and menu bar
 (if (and (fboundp 'tool-bar-mode)
-	 (fboundp 'scroll-bar-mode)
          (fboundp 'menu-bar-mode))
     (progn
       (tool-bar-mode -1)
-      (scroll-bar-mode -1)
       (menu-bar-mode 0)))
 
 
